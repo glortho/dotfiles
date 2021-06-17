@@ -74,7 +74,7 @@ P110K_DIR="${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k"
 if [ ! -d "$P110K_DIR" ]; then
     git clone --depth=1 https://github.com/romkatv/powerlevel10k.git "$P110K_DIR"
 fi
-#if [ ! -e "$HOME/.p10k.zsh" ] || [ "${OVERWRITE}" = "true" ]; then
-    #rm -f  "$HOME/.p10k.zsh"
-    #ln -s "$(pwd)/.p10k.zsh" $HOME
-#fi
+if [ ! -e "$HOME/.p10k.zsh" ] || [ "${OVERWRITE}" = "true" ]; then
+    rm -f  "$HOME/.p10k.zsh"
+    ln -s "$(pwd)/.p10k.zsh" $HOME
+fi
