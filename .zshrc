@@ -1,84 +1,21 @@
 # ZSH Config
 # Path to your oh-my-zsh configuration.
 ZSH=$HOME/.oh-my-zsh
-ZSH_THEME="bullet-train"
+ZSH_THEME="powerlevel10k/powerlevel10k"
 
-BULLETTRAIN_KCTX_KCONFIG=/home/glortho/.kube/config
-BULLETTRAIN_PROMPT_ORDER=(
-  status
-  dir
-  git
-  kctx
-  nvm
-  ruby
-  custom
-  time
-)
-BULLETTRAIN_STATUS_BG=black
-BULLETTRAIN_TIME_BG=black
-BULLETTRAIN_TIME_FG=white
-BULLETTRAIN_GIT_COLORIZE_DIRTY=true
-BULLETTRAIN_GIT_COLORIZE_DIRTY_BG_COLOR=yellow
-BULLETTRAIN_GIT_DIRTY=""
-BULLETTRAIN_KCTX_BG=039
-BULLETTRAIN_CUSTOM_MSG="🐍\ $CONDA_DEFAULT_ENV"
-BULLETTRAIN_CUSTOM_BG=137
-BULLETTRAIN_CUSTOM_FG=white
-BULLETTRAIN_RUBY_PREFIX=♦
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
 
-#/Users/jed/.nvm/versions/node/v5.9.1/bin/node ~/Google\ Drive/messages.js | cowsay
-
-
-# My Scripts
-#source "$HOME/.scripts/aliases.sh"
-#source "$HOME/.scripts/env.sh"
-
-# PERLS
-# source ~/perl5/perlbrew/etc/bashrc
-
-# ZSH Configurations
-#COMPLETION_WAITING_DOTS="true"
-
-
- alias zshrc="nvim ~/.zshrc"
-
-# Set to this to use case-sensitive completion
-# CASE_SENSITIVE="true"
-
-# Comment this out to disable bi-weekly auto-update checks
-# DISABLE_AUTO_UPDATE="true"
-
-# Uncomment to change how many often would you like to wait before auto-updates occur? (in days)
-# export UPDATE_ZSH_DAYS=13
-
-# Uncomment following line if you want to disable colors in ls
-# DISABLE_LS_COLORS="true"
-
-# Uncomment following line if you want to disable autosetting terminal title.
-# DISABLE_AUTO_TITLE="true"
-
-# Uncomment following line if you want red dots to be displayed while waiting for completion
-# COMPLETION_WAITING_DOTS="true"
+ alias zshrc="code ~/.zshrc"
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 plugins=(go git brew fabric osx npm docker jsontools sudo kubectl zsh-syntax-highlighting)
-
-#on _update_ruby_version()
-#{
-    #typeset -g ruby_version=''
-    #if which rvm-prompt &> /dev/null; then
-      #ruby_version="$(rvm-prompt i v g)"
-      #rvm-prompt i v g
-    #else
-      #if which rbenv &> /dev/null; then
-        #ruby_version="$(rbenv version | sed -e "s/ (set.*$//")"
-      #fi
-    #fi
-#}
-
-#chpwd_functions+=(_update_ruby_version)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -176,4 +113,5 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
 
-eval "$(rbenv init -)"
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
