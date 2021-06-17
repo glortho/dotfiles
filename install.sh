@@ -65,7 +65,7 @@ if [ ! -d "$HOME/.oh-my-zsh" ]; then
 fi
 if [ ! -e "$HOME/.zshrc" ] || [ "${OVERWRITE}" = "true" ]; then
     rm -f  "$HOME/.zshrc"
-    ln -s "$(pwd)/.zshrc" $HOME
+    ln -s "$(pwd)/zshrc" "$HOME/.zshrc"
 fi
 
 # powerline 10k
