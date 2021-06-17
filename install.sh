@@ -78,3 +78,6 @@ if [ ! -e "$HOME/.p10k.zsh" ] || [ "${OVERWRITE}" = "true" ]; then
     rm -f  "$HOME/.p10k.zsh"
     ln -s "$(pwd)/.p10k.zsh" $HOME
 fi
+
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+
