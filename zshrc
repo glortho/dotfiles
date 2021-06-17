@@ -15,7 +15,7 @@ fi
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(go git brew fabric osx npm docker jsontools sudo kubectl zsh-syntax-highlighting)
+plugins=(golang git brew fabric osx npm docker jsontools sudo kubectl zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -80,9 +80,6 @@ alias du="ncdu -r --exclude .git"
 export FZF_DEFAULT_COMMAND='ag -g ""'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 export FZF_DEFAULT_OPTS="--bind='ctrl-o:execute(vim {})+abort'"
-
-# init rupa/z
-. ~/z.sh
 
 # use vim
 set -o vi
