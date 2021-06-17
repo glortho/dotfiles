@@ -76,11 +76,6 @@ alias undopush="git push -f origin HEAD^:master"
 alias preview="fzf --preview 'bat {}'"
 alias du="ncdu -r --exclude .git"
 
-export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin:
-export PATH="$HOME/bin:$HOME/.local/bin:$PATH"
-export PATH="$HOME/anaconda3/bin:$PATH"
-~
-
 # use ag for fzf
 export FZF_DEFAULT_COMMAND='ag -g ""'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
