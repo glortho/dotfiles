@@ -72,6 +72,10 @@ if [ ! -e "$HOME/.zshrc" ] || [ "${OVERWRITE}" = "true" ]; then
     rm -f  "$HOME/.zshrc"
     ln -s "$(pwd)/zshrc" "$HOME/.zshrc"
 fi
+if [ ! -e "$HOME/.bashrc" ] || [ "${OVERWRITE}" = "true" ]; then
+    rm -f  "$HOME/.bashrc"
+    ln -s "$(pwd)/bashrc" "$HOME/.bashrc"
+fi
 
 # powerline 10k
 P110K_DIR="${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k"
