@@ -40,8 +40,11 @@ if [ "$IS_MACOS" = "true" ]; then
 else
     # Install curl, tar, git, other dependencies if missing
     PACKAGES_NEEDED="\
+        bat \
         curl \
         ca-certificates \
+        fzf \
+        ripgrep \
         zip \
         unzip \
         zsh"
