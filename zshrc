@@ -100,6 +100,17 @@ fancy-ctrl-z () {
 zle -N fancy-ctrl-z
 bindkey '^Z' fancy-ctrl-z
 
+function checkout-branch() {
+  local branch_to_checkout
+  branch_to_checkout=$(git branch | fzf | xargs)
+
+  if [ -n "$branch_to_checkout" ]; then
+    git checkout $branch_to_checkout
+  fi
+}
+
+alias gcc="checkout-branch"
+
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 . /usr/share/doc/fzf/examples/key-bindings.zsh
 
