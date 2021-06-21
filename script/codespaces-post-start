@@ -6,7 +6,3 @@ if ! grep -q "root.*/bin/zsh" /etc/passwd
 then
   chsh -s /bin/zsh root
 fi
-
-# Install some developer tools and setup Linux how I like it
-apt-get install -y \
-  exa ag fzf shellcheck zsh-autosuggestions
