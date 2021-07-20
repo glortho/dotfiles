@@ -43,6 +43,7 @@ else
         curl \
         ca-certificates \
         fzf \
+        fuse \
         ripgrep \
         zip \
         unzip \
