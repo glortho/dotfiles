@@ -66,6 +66,8 @@ else
         downloadFonts
         fc-cache -f -v
     fi
+
+    sudo apt-get clean
 fi
 
 # Oh My Zsh!
