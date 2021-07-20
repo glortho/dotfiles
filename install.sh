@@ -78,6 +78,10 @@ if [ ! -e "$HOME/.bashrc" ] || [ "${OVERWRITE}" = "true" ]; then
     rm -f  "$HOME/.bashrc"
     ln -s "$(pwd)/bashrc" "$HOME/.bashrc"
 fi
+if [ ! -e "$HOME/.config/nvim" ] || [ "${OVERWRITE}" = "true" ]; then
+    rm -rf  "$HOME/.config/nvim"
+    ln -s "$(pwd)/config/nvim" "$HOME/.config/nvim"
+fi
 
 # powerline 10k
 P110K_DIR="${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k"
