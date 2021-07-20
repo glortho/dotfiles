@@ -95,3 +95,15 @@ fi
 
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 
+# vim
+# install latest neovim
+wget https://github.com/neovim/neovim/releases/download/nightly/nvim.appimage
+chmod u+x nvim.appimage
+mv nvim.appimage /usr/local/bin/nvim
+
+gem install neovim
+npm install -g neovim
+pip3 install --user neovim
+
+nvim +'PlugInstall --sync' +qa
+
