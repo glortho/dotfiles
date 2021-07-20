@@ -54,11 +54,11 @@ else
         if [ ! -d "/var/lib/apt/lists" ] || [ "$(ls /var/lib/apt/lists/ | wc -l)" = "0" ]; then
             sudo apt-get update
         fi
-        sudo apt-get -y install ${PACKAGES_NEEDED}
+        sudo apt-get -y -q install ${PACKAGES_NEEDED}
     fi
 
     if ! type git > /dev/null 2>&1; then
-        sudo apt-get -y git
+        sudo apt-get -y -q git
     fi
 
     # Fonts
