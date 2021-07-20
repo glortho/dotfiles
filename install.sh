@@ -108,3 +108,4 @@ pip3 install --user neovim
 
 nvim +'PlugInstall --sync' +qa
 
+chsh -s $(which zsh)
