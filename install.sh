@@ -109,8 +109,8 @@ n stable
 # vim
 # install latest neovim
 wget https://github.com/neovim/neovim/releases/download/nightly/nvim.appimage
-chmod u+x nvim.appimage
-mv nvim.appimage /usr/local/bin/nvim
+sudo chmod u+x nvim.appimage
+sudo mv nvim.appimage /usr/local/bin/nvim
 
 gem install neovim
 npm install -g neovim
@@ -118,4 +118,4 @@ pip3 install --user neovim
 
 nvim +'PlugInstall --sync' +qa
 
-chsh -s $(which zsh)
+sudo chsh -s $(which zsh)
