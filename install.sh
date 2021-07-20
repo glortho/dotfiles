@@ -40,13 +40,14 @@ if [ "$IS_MACOS" = "true" ]; then
 else
     # Install curl, tar, git, other dependencies if missing
     PACKAGES_NEEDED="\
-        curl \
         ca-certificates \
-        fzf \
+        curl \
         fuse \
+        fzf \
+        npm \
         ripgrep \
-        zip \
         unzip \
+        zip \
         zsh"
 
     if ! dpkg -s ${PACKAGES_NEEDED} > /dev/null 2>&1; then
@@ -95,6 +96,13 @@ if [ ! -e "$HOME/.p10k.zsh" ] || [ "${OVERWRITE}" = "true" ]; then
 fi
 
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+
+# install latest stable node
+npm cache clean -f
+npm install -g n
+node_version=`node --version`
+ln -s "/workspaces/github/vendor/node/node-$node_version-linux-x64/lib/node_modules/n/bin/n" /usr/local/bin/n
+n stable
 
 # vim
 # install latest neovim
