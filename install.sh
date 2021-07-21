@@ -41,6 +41,7 @@ else
     # Install curl, tar, git, other dependencies if missing
     PACKAGES_NEEDED="\
         ca-certificates \
+        ctags \
         curl \
         fuse \
         fzf \
