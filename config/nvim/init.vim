@@ -203,16 +203,20 @@ au WinLeave * :set colorcolumn=0
 ""autocmd FileType c,cpp,java,php,ruby,python,vim,coffee,js,html,css autocmd BufWritePre <buffer> :call <SID>StripTrailingWhitespaces()
 
 ""line movement aliases
-"nnoremap <leader>lj :m .+1<CR>==
-"nnoremap <leader>lk :m .-2<CR>==
-"inoremap <leader>lj <Esc>:m .+1<CR>==gi
-"inoremap <leader>lk <Esc>:m .-2<CR>==gi
-"vnoremap <leader>lj :m '>+1<CR>gv=gv
-"vnoremap <leader>lk :m '<-2<CR>gv=gv''
+nnoremap <leader>lj :m .+1<CR>==
+nnoremap <leader>lk :m .-2<CR>==
+inoremap <leader>lj <Esc>:m .+1<CR>==gi
+inoremap <leader>lk <Esc>:m .-2<CR>==gi
+vnoremap <leader>lj :m '>+1<CR>gv=gv
+vnoremap <leader>lk :m '<-2<CR>gv=gv''
+
+"" Move visual block
+vnoremap J :m '>+1<CR>gv=gv
+vnoremap K :m '<-2<CR>gv=gv
 
 "" easier beginning and end of line
-"noremap H ^
-"noremap L $
+noremap H ^
+noremap L $
 
 ""dash shortcut
 ":nmap <silent> <leader>d <Plug>DashSearch
@@ -233,10 +237,6 @@ nmap <leader>xl :lclose<CR>:cclose<CR>
 "nmap <Leader>P "+P
 "vmap <Leader>p "+p
 "vmap <Leader>P "+P
-
-"" Move visual block
-"vnoremap J :m '>+1<CR>gv=gv
-"vnoremap K :m '<-2<CR>gv=gv
 
 "" vim-easy-align
 "" Start interactive EasyAlign in visual mode (e.g. vip<Enter>)
