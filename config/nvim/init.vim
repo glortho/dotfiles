@@ -4,7 +4,7 @@ set nocompatible
 call plug#begin('~/.config/nvim/plugged')
 
 Plug 'ludovicchabant/vim-gutentags'
-"Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-rails'
 Plug 'jedverity/feral-vim'
@@ -62,9 +62,6 @@ Plug 'radenling/vim-dispatch-neovim'
 
 call plug#end()
 
-""set encoding=utf8
-"set guifont=Inconsolata_Nerd_Font:h12
-""
 set rtp+=~/.fzf
 
 set modelines=0
@@ -129,22 +126,19 @@ endif
 "" real-time highlighting when substituting
 set inccommand=split
 
-"noremap <up>    <C-W>+
-"noremap <down>  <C-W>-
-"noremap <left>  3<C-W><
-"noremap <right> 3<C-W>>
-"inoremap <up> <nop>
-"inoremap <down> <nop>
-"inoremap <left> <nop>
-"inoremap <right> <nop>
+noremap <up>    <C-W>+
+noremap <down>  <C-W>-
+noremap <left>  3<C-W><
+noremap <right> 3<C-W>>
+inoremap <up> <nop>
+inoremap <down> <nop>
+inoremap <left> <nop>
+inoremap <right> <nop>
 nnoremap j gj
 nnoremap k gk
 
-"nnoremap <leader>W :%s/\s\+$//<cr>:let @/=''<CR>
-"nnoremap <leader>ft Vatzf
 "nnoremap <leader>v V`]
 nnoremap <leader>ev <C-w><C-v><C-l>:e ~/.config/nvim/init.vim<cr>
-"nnoremap <leader>eb <C-w><C-v><C-l>:e config/bundles.vim<cr>
 nnoremap <leader>sv :so $MYVIMRC<cr>
 "nnoremap <leader>w <C-w>v<C-w>l
 nmap <leader><space> :w<cr>
@@ -155,14 +149,12 @@ colorscheme feral
 set wildignore+=*.o,*.obj,app/locale/**,app/code/community/**,/Users/jed/Sites/ecomom/gooder/var,/Users/jed/Sites/ecomom/gooder/lib,*.png,*.jpg,*.gif,**/.DS_Store,*.csv,.sass-cache/**,node_modules
 
 "" replace selected text
-"vnoremap <C-r> "hy:%s/<C-r>h//gc<left><left><left>
+vnoremap <C-r> "hy:%s/<C-r>h//gc<left><left><left>
 
-"let javascript_enable_domhtmlcss=1
-
-"nnoremap <leader>bi vi{
-"nnoremap <leader>pi vi(
-"nnoremap <leader>ba va{
-"nnoremap <leader>pa va(
+nnoremap <leader>bi vi{
+nnoremap <leader>pi vi(
+nnoremap <leader>ba va{
+nnoremap <leader>pa va(
 
 "" easy toggle to last buffer
 nnoremap ,, <C-^>
@@ -229,18 +221,6 @@ au WinLeave * :set colorcolumn=0
 ""dash shortcut
 ":nmap <silent> <leader>d <Plug>DashSearch
 
-""statusline (powerline)
-"set noshowmode
-
-"if ! has('gui_running')
-    "set ttimeoutlen=10
-    "augroup FastEscape
-        "autocmd!
-        "au InsertEnter * set timeoutlen=0
-        "au InsertLeave * set timeoutlen=1000
-    "augroup END
-"endif
-
 
 ""====[ Make tabs, trailing whitespace, and non-breaking spaces visible ]======
 
@@ -257,13 +237,6 @@ nmap <leader>xl :lclose<CR>:cclose<CR>
 "nmap <Leader>P "+P
 "vmap <Leader>p "+p
 "vmap <Leader>P "+P
-
-""calendar
-"let g:calendar_google_calendar = 1
-"let g:calendar_google_task = 1
-
-""delimitMate
-"let delimitMate_expand_cr = 1
 
 "" Move visual block
 "vnoremap J :m '>+1<CR>gv=gv
@@ -285,16 +258,16 @@ nmap <leader>xl :lclose<CR>:cclose<CR>
 "set suffixesadd+=.js
 
 "" common scenario of inserting then camelcasing
-"inoremap <c-e> <esc>l~
+inoremap <c-e> <esc>l~
 
 "" prettify json
-"nmap <Leader>js :%!python -m json.tool
+nmap <Leader>js :%!python -m json.tool
 
 "" save and push (from commit message)
-"nmap <Leader>zzp :Gwrite<cr>:Gpush<cr>
+nmap <Leader>zzp :Gwrite<cr>:Gpush<cr>
 
 ""Dispatch
-"nmap <Leader>bb :Dispatch
+nmap <Leader>bb :Dispatch
 
 ""Search and replace
 "" .vim/plugin/qfdo.vim
@@ -359,18 +332,18 @@ nmap <leader>xl :lclose<CR>:cclose<CR>
 "command! -nargs=1 -bang Qfdofile :call QFDo(<bang>0,<q-args>)
 
 "" go to matching parens/brace
-"nmap <leader>fc f(%
-"nmap <leader>fC f{%
-"nmap <leader>fo f)%
-"nmap <leader>fO f}%
+nmap <leader>fc f(%
+nmap <leader>fC f{%
+nmap <leader>fo f)%
+nmap <leader>fO f}%
 
 "" add spaces inside parens/brace
 ""nmap <leader>sb vibS<space>i<esc>
 ""nmap <leader>sB viBS<space>i<esc>
 
 ""easy add surrounding quotes
-"nmap <leader>s' viwS'<esc>
-"nmap <leader>s" viwS"<esc>
+nmap <leader>s' viwS'<esc>
+nmap <leader>s" viwS"<esc>
 
 ""jsdoc
 "let g:jsdoc_allow_input_prompt  = 1
@@ -383,7 +356,7 @@ nmap <leader>xl :lclose<CR>:cclose<CR>
 "let g:qs_second_occurrence_highlight_color = 81
 
 ""search alias
-nmap <leader>fs :Ag
+nmap <leader>ss :Ag
 
 "" fzf.vim
 let g:fzf_buffers_jump = 1
@@ -398,42 +371,25 @@ nmap <leader>oc :Commits<CR>
 nmap <leader>bc :BCommits<CR>
 let g:fzf_layout = { 'down': '~20%' }
 
-"" allow for passing options into :Ag
-"function! s:ag_with_opts(arg, bang)
-  "let tokens  = split(a:arg)
-  "let ag_opts = join(filter(copy(tokens), 'v:val =~ "^-"'))
-  "let query   = join(filter(copy(tokens), 'v:val !~ "^-"'))
-  "call fzf#vim#ag(query, ag_opts, a:bang ? {} : {'down': '40%'})
-"endfunction
-
-"autocmd VimEnter * command! -nargs=* -bang Ag call s:ag_with_opts(<q-args>, <bang>0)
-
 "let g:python_host_prog = '/Users/glortho/miniconda3/bin/python'
 "let g:python3_host_prog = '/Users/glortho/miniconda3/bin/python3'
 
 "" airline
-"let g:airline_powerline_fonts = 1
+let g:airline_powerline_fonts = 1
+let g:airline#extensions#tabline#enabled = 1
 
 "" open quickfix window after grep
 "autocmd QuickFixCmdPost *grep* cwindow
 
 "" navigating w0rp/ale lint errors
-"let g:ale_javascript_eslint_executable = 'eslint_d'
 nmap <silent> <C-k> <Plug>(ale_previous_wrap)
 nmap <silent> <C-j> <Plug>(ale_next_wrap)
-"call airline#parts#define_function('ALE', 'ALEGetStatusLine')
-"call airline#parts#define_condition('ALE', 'exists("*ALEGetStatusLine")')
-"let g:airline_section_error = airline#section#create_left(['ALE'])
-"let g:ale_linters = {
-"\   'javascript': ['eslint'],
-"\}
+call airline#parts#define_function('ALE', 'ALEGetStatusLine')
+call airline#parts#define_condition('ALE', 'exists("*ALEGetStatusLine")')
+let g:airline_section_error = airline#section#create_left(['ALE'])
 
 " NERDTree Mappings
 nmap <leader>nf :NERDTreeFind<Cr>
-
-"if exists("g:loaded_webdevicons")
-  "call webdevicons#refresh()
-"endif
 
 let g:coc_global_extensions = [
   \ 'coc-json',
@@ -444,153 +400,8 @@ let g:coc_global_extensions = [
   \ 'coc-eslint',
   \ ]
 
-"" Use tab for trigger completion with characters ahead and navigate.
-"" NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by
-"" other plugin before putting this into your config.
-"inoremap <silent><expr> <TAB>
-      "\ pumvisible() ? "\<C-n>" :
-      "\ <SID>check_back_space() ? "\<TAB>" :
-      "\ coc#refresh()
-"inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
-
-"function! s:check_back_space() abort
-  "let col = col('.') - 1
-  "return !col || getline('.')[col - 1]  =~# '\s'
-"endfunction
-
-"" Use <c-space> to trigger completion.
-""if has('nvim')
-  ""inoremap <silent><expr> <c-space> coc#refresh()
-""else
-  ""inoremap <silent><expr> <c-@> coc#refresh()
-""endif
-
-"" Make <CR> auto-select the first completion item and notify coc.nvim to
-"" format on enter, <cr> could be remapped by other vim plugin
-"inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm()
-                              "\: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
-
-"" Use `[g` and `]g` to navigate diagnostics
-"" Use `:CocDiagnostics` to get all diagnostics of current buffer in location list.
-"nmap <silent> [g <Plug>(coc-diagnostic-prev)
-"nmap <silent> ]g <Plug>(coc-diagnostic-next)
-
-"" GoTo code navigation.
-"nmap <silent> gd <Plug>(coc-definition)
-"nmap <silent> gy <Plug>(coc-type-definition)
-"nmap <silent> gi <Plug>(coc-implementation)
-"nmap <silent> gr <Plug>(coc-references)
-
-"" Use K to show documentation in preview window.
-"nnoremap <silent> K :call <SID>show_documentation()<CR>
-
-"function! s:show_documentation()
-  "if (index(['vim','help'], &filetype) >= 0)
-    "execute 'h '.expand('<cword>')
-  "elseif (coc#rpc#ready())
-    "call CocActionAsync('doHover')
-  "else
-    "execute '!' . &keywordprg . " " . expand('<cword>')
-  "endif
-"endfunction
-
-"" Highlight the symbol and its references when holding the cursor.
-"autocmd CursorHold * silent call CocActionAsync('highlight')
-
-"" Symbol renaming.
-"nmap <leader>rn <Plug>(coc-rename)
-
-"" Formatting selected code.
-"xmap <leader>f  <Plug>(coc-format-selected)
-"nmap <leader>f  <Plug>(coc-format-selected)
-
-"augroup mygroup
-  "autocmd!
-  "" Setup formatexpr specified filetype(s).
-  "autocmd FileType typescript,json setl formatexpr=CocAction('formatSelected')
-  "" Update signature help on jump placeholder.
-  "autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
-"augroup end
-
-"" Applying codeAction to the selected region.
-"" Example: `<leader>aap` for current paragraph
-"xmap <leader>a  <Plug>(coc-codeaction-selected)
-"nmap <leader>a  <Plug>(coc-codeaction-selected)
-
-"" Remap keys for applying codeAction to the current buffer.
-"nmap <leader>ac  <Plug>(coc-codeaction)
-"" Apply AutoFix to problem on the current line.
-"nmap <leader>qf  <Plug>(coc-fix-current)
-
-"" Map function and class text objects
-"" NOTE: Requires 'textDocument.documentSymbol' support from the language server.
-"xmap if <Plug>(coc-funcobj-i)
-"omap if <Plug>(coc-funcobj-i)
-"xmap af <Plug>(coc-funcobj-a)
-"omap af <Plug>(coc-funcobj-a)
-"xmap ic <Plug>(coc-classobj-i)
-"omap ic <Plug>(coc-classobj-i)
-"xmap ac <Plug>(coc-classobj-a)
-"omap ac <Plug>(coc-classobj-a)
-
-"" Remap <C-f> and <C-b> for scroll float windows/popups.
-"if has('nvim-0.4.0') || has('patch-8.2.0750')
-  "nnoremap <silent><nowait><expr> <C-f> coc#float#has_scroll() ? coc#float#scroll(1) : "\<C-f>"
-  "nnoremap <silent><nowait><expr> <C-b> coc#float#has_scroll() ? coc#float#scroll(0) : "\<C-b>"
-  "inoremap <silent><nowait><expr> <C-f> coc#float#has_scroll() ? "\<c-r>=coc#float#scroll(1)\<cr>" : "\<Right>"
-  "inoremap <silent><nowait><expr> <C-b> coc#float#has_scroll() ? "\<c-r>=coc#float#scroll(0)\<cr>" : "\<Left>"
-  "vnoremap <silent><nowait><expr> <C-f> coc#float#has_scroll() ? coc#float#scroll(1) : "\<C-f>"
-  "vnoremap <silent><nowait><expr> <C-b> coc#float#has_scroll() ? coc#float#scroll(0) : "\<C-b>"
-"endif
-
-"" Use CTRL-S for selections ranges.
-"" Requires 'textDocument/selectionRange' support of language server.
-"nmap <silent> <C-s> <Plug>(coc-range-select)
-"xmap <silent> <C-s> <Plug>(coc-range-select)
-
-"" Add `:Format` command to format current buffer.
-"command! -nargs=0 Format :call CocAction('format')
-
-"" Add `:Fold` command to fold current buffer.
-"command! -nargs=? Fold :call     CocAction('fold', <f-args>)
-
-"" Add `:OR` command for organize imports of the current buffer.
-"command! -nargs=0 OR   :call     CocAction('runCommand', 'editor.action.organizeImport')
-
-"" Add (Neo)Vim's native statusline support.
-"" NOTE: Please see `:h coc-status` for integrations with external plugins that
-"" provide custom statusline: lightline.vim, vim-airline.
-"set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
-
-"" Use <C-l> for trigger snippet expand.
-"imap <C-l> <Plug>(coc-snippets-expand)
-
-"" Use <C-j> for select text for visual placeholder of snippet.
-"vmap <C-l> <Plug>(coc-snippets-select)
-
-"" Use <C-j> for jump to next placeholder, it's default of coc.nvim
-"let g:coc_snippet_next = '<c-l>'
-
-"" Use <C-k> for jump to previous placeholder, it's default of coc.nvim
-"let g:coc_snippet_prev = '<c-k>'
-
-"" Use <leader>x for convert visual selected code to snippet
-"xmap <leader>x  <Plug>(coc-convert-snippet)
-
-"" Show pop-up window for git blame
-"nmap <leader>b :GitMessenger<CR>
-
-"" Test Nearest test
-"nmap <leader>tn :TestNearest<CR>
-"nmap <leader>tf :TestFile<CR>
-"nmap <leader>tl :TestLast<CR>
-"nmap <leader>tv :TestVisit<CR>
-
 "" Send results out to quickfix
 "let test#strategy = "dispatch"
-
-"" Explicitly declare jest as test runner for vim-test
-"let g:test#javascript#runner = 'jest'
 
 "Rails
 nmap <leader>tfr :Start bin/rails test %<CR>
