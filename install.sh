@@ -48,6 +48,7 @@ else
         npm \
         ripgrep \
         unzip \
+        xauth \
         xclip \
         zip \
         zsh"
