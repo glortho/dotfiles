@@ -119,13 +119,6 @@ set formatoptions=qrn1
 set list
 set listchars=tab:▸\
 
-"" Centralize backups, swapfiles and undo history
-set backupdir=~/.vim/backups
-set directory=~/.vim/swaps
-if exists("&undodir")
-  set undodir=~/.vim/undo
-endif
-
 "" real-time highlighting when substituting
 set inccommand=split
 
@@ -359,7 +352,7 @@ nmap <leader>s" viwS"<esc>
 "let g:qs_second_occurrence_highlight_color = 81
 
 ""search alias
-nmap <leader>ss :Ag
+nmap <leader>ss :Rg
 
 "" fzf.vim
 let g:fzf_buffers_jump = 1
