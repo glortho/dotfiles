@@ -109,6 +109,9 @@ set hlsearch
 nnoremap <leader>, :noh<cr>
 nnoremap <leader>r :%s/
 
+nnoremap <leader>bn :bn<cr>
+nnoremap <leader>bp :bp<cr>
+
 "set wrap
 set textwidth=79
 set formatoptions=qrn1
