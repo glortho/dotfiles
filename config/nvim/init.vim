@@ -14,7 +14,7 @@ Plug 'jedverity/feral-vim'
 "Plug 'StanAngeloff/php.vim'
 "Plug 'xenoterracide/html.vim'
 Plug 'tpope/vim-surround'
-Plug 'w0rp/ale'
+Plug 'dense-analysis/ale'
 Plug 'scrooloose/nerdcommenter'
 "Plug 'othree/xml.vim'
 "Plug 'Kris2k/matchit'
@@ -376,6 +376,10 @@ let g:airline#extensions#tabline#enabled = 1
 
 "" open quickfix window after grep
 "autocmd QuickFixCmdPost *grep* cwindow
+
+" Ale
+let g:ale_ruby_rubocop_executable = 'bin/rubocop'
+let g:ale_ruby_ruby_executable = 'bin/safe-ruby'
 
 "" navigating w0rp/ale lint errors
 nmap <silent> <C-k> <Plug>(ale_previous_wrap)
