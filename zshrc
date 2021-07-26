@@ -77,10 +77,12 @@ alias undopush="git push -f origin HEAD^:master"
 alias preview="fzf --preview 'bat {}'"
 alias du="ncdu -r --exclude .git"
 
-# use ag for fzf
-export FZF_DEFAULT_COMMAND='ag -g ""'
+# use ripgrep for fzf
+export FZF_DEFAULT_COMMAND='rg --files --hidden --follow --glob '!.git''
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 export FZF_DEFAULT_OPTS="--bind='ctrl-o:execute(vim {})+abort'"
+
+export EDITOR=vim
 
 # use vim
 set -o vi
