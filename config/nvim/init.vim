@@ -423,12 +423,12 @@ inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm() : "\<C-g>u\<CR
 "let test#strategy = "dispatch"
 
 function TestFile()
-  let g:last_test_command = ":Start bin/rails test %"
+  let g:last_test_command = ":Start bin/rails test " . @%
   :execute g:last_test_command
 endfunction
 
 function TestNearest()
-  let g:last_test_command = "Start bin/rails test %:" . line(".")
+  let g:last_test_command = "Start bin/rails test " . @% . ":" . line(".")
   :execute g:last_test_command
 endfunction
 
