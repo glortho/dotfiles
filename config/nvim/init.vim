@@ -422,11 +422,28 @@ inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm() : "\<C-g>u\<CR
 "" Send results out to quickfix
 "let test#strategy = "dispatch"
 
+function TestFile()
+  let g:last_test_command = ":Start bin/rails test %"
+  :execute g:last_test_command
+endfunction
+
+function TestNearest()
+  let g:last_test_command = "Start bin/rails test %:" . line(".")
+  :execute g:last_test_command
+endfunction
+
+function TestLast()
+  :execute g:last_test_command
+endfunction
+
 "Rails
-nmap <leader>tfr :Start bin/rails test %<CR>
-nmap <leader>tnr :execute "Start bin/rails test %:" . line(".")<CR>
+nmap <leader>tfr :call TestFile()<CR>
+nmap <leader>tnr :call TestNearest()<CR>
 nmap <leader>av :AV<CR>
 
 "Integration tests
 nmap <leader>tfi :Start npm run test:integration:storybook %<CR>
 nmap <leader>tni :Start npm run test:integration:storybook %<CR>
+
+"Test
+nmap <leader>tl :call TestLast()<CR>
