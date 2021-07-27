@@ -263,7 +263,7 @@ nmap <Leader>js :%!python -m json.tool
 nmap <Leader>zzp :Gwrite<cr>:Gpush<cr>
 
 ""Dispatch
-nmap <Leader>bb :Dispatch
+nmap <Leader>bb :Dispatch<space>
 
 ""Search and replace
 "" .vim/plugin/qfdo.vim
@@ -352,7 +352,7 @@ nmap <leader>s" viwS"<esc>
 "let g:qs_second_occurrence_highlight_color = 81
 
 ""search alias
-nmap <leader>ss :Rg
+nmap <leader>ss :Rg<space>
 
 "" fzf.vim
 let g:fzf_buffers_jump = 1
