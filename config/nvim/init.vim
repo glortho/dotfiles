@@ -4,7 +4,7 @@ set nocompatible
 call plug#begin('~/.config/nvim/plugged')
 
 Plug 'ludovicchabant/vim-gutentags'
-Plug 'wincent/vim-clip'
+Plug 'wincent/vim-clipper'
 Plug 'vim-airline/vim-airline'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-rails'
