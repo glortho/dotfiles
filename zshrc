@@ -11,7 +11,7 @@ fi
 
 ZSH_THEME="powerlevel10k/powerlevel10k"
 
- alias zshrc="code ~/.zshrc"
+ alias zshrc="vim ~/.zshrc"
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
@@ -66,6 +66,7 @@ alias gpsu='git push --set-upstream origin'
 alias gco='git commit'
 alias gch='git checkout'
 alias gm='git merge'
+alias credit='git blame'
 alias pr='hub pull-request'
 
 # Undo last commit
