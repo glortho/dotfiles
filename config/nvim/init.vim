@@ -4,7 +4,7 @@ set nocompatible
 call plug#begin('~/.config/nvim/plugged')
 
 Plug 'ludovicchabant/vim-gutentags'
-Plug 'wincent/vim-clipper'
+"Plug 'wincent/vim-clipper'
 Plug 'vim-airline/vim-airline'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-rails'
@@ -63,7 +63,19 @@ Plug 'radenling/vim-dispatch-neovim'
 
 call plug#end()
 
-call clipper#set_invocation('socat - UNIX-CLIENT:/root/.clipper.sock')
+"call clipper#set_invocation('socat - UNIX-CLIENT:/root/.clipper.sock')
+function GBrowseFileRemote()
+  let url = split(execute(":GBrowse :%"))[0]
+  :call system('socat - UNIX-CLIENT:/root/.clipper.sock', url)
+endfunction
+
+function GBrowseLineRemote()
+  let url = split(execute(":.GBrowse"))[0]
+  :call system('socat - UNIX-CLIENT:/root/.clipper.sock', url)
+endfunction
+nnoremap <leader>yfr :call GBrowseFileRemote()<CR>
+nnoremap <leader>ylr :call GBrowseLineRemote()<CR>
+vnoremap <leader>ylr :call GBrowseLineRemote()<CR>
 
 set rtp+=~/.fzf
 
