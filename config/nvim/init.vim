@@ -63,6 +63,8 @@ Plug 'radenling/vim-dispatch-neovim'
 
 call plug#end()
 
+call clipper#set_invocation('socat - UNIX-CLIENT:/root/.clipper.sock')
+
 set rtp+=~/.fzf
 
 set modelines=0

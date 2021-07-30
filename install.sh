@@ -47,9 +47,8 @@ else
         fzf \
         npm \
         ripgrep \
+        socat \
         unzip \
-        xauth \
-        xclip \
         zip \
         zsh"
 
