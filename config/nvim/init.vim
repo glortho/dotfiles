@@ -175,7 +175,7 @@ nnoremap ,, <C-^>
 
 "" git shortcuts
 nnoremap <leader>gm :Gmerge<CR>
-nnoremap <leader>gs :Gstatus<CR><C-w>20+
+nnoremap <leader>gs :Git<CR><C-w>20+
 nnoremap <leader>ps :Dispatch git push<CR>
 nnoremap <leader>pu :Gpull<CR>
 nnoremap <leader>yu :GBrowse!<CR>
