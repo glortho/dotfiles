@@ -120,4 +120,4 @@ pip3 install --user neovim
 
 nvim +'PlugInstall --sync' +qa
 
-sudo chsh -s $(which zsh)
+sudo chsh -s "$(which zsh)" "$(whoami)"
