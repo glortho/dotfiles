@@ -105,7 +105,7 @@ bindkey '^Z' fancy-ctrl-z
 
 function checkout-branch() {
   local branch_to_checkout
-  branch_to_checkout=$(git branch | fzf | xargs)
+  branch_to_checkout=$(git branch | fzf --tac | xargs)
 
   if [ -n "$branch_to_checkout" ]; then
     git checkout $branch_to_checkout
