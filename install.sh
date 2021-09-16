@@ -45,6 +45,7 @@ else
         curl \
         fuse \
         fzf \
+        neovim \
         npm \
         ripgrep \
         socat \
@@ -109,11 +110,6 @@ ln -s "/workspaces/github/vendor/node/node-$node_version-linux-x64/lib/node_modu
 n stable
 
 # vim
-# install latest neovim
-wget https://github.com/neovim/neovim/releases/download/nightly/nvim.appimage
-sudo chmod u+x nvim.appimage
-sudo mv nvim.appimage /usr/local/bin/nvim
-
 gem install neovim
 npm install -g neovim
 pip3 install --user neovim
