@@ -111,7 +111,7 @@ n stable
 # vim
 sudo add-apt-repository ppa:neovim-ppa/stable
 sudo apt-get update
-sudo apt-get install neovim
+sudo apt-get install --yes neovim
 gem install neovim
 npm install -g neovim
 pip3 install --user neovim
