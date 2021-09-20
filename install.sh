@@ -45,6 +45,7 @@ else
         curl \
         fuse \
         fzf \
+        neovim \
         npm \
         ripgrep \
         socat \
@@ -101,17 +102,7 @@ fi
 
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 
-# install latest stable node
-npm cache clean -f
-npm install -g n
-node_version=`node --version`
-ln -s "/workspaces/github/vendor/node/node-$node_version-linux-x64/lib/node_modules/n/bin/n" /usr/local/bin/n
-n stable
-
 # vim
-sudo add-apt-repository ppa:neovim-ppa/stable
-sudo apt-get update
-sudo apt-get install --yes neovim
 gem install neovim
 npm install -g neovim
 pip3 install --user neovim
