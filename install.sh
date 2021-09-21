@@ -102,6 +102,10 @@ fi
 
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 
+# nodejs
+curl -fsSL https://deb.nodesource.com/setup_16.x | sudo -E bash -
+sudo apt-get install -y nodejs
+
 # vim
 # install latest neovim
 wget https://github.com/neovim/neovim/releases/download/nightly/nvim.appimage
