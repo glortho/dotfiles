@@ -109,8 +109,8 @@ sudo apt-get install -y nodejs
 # vim
 # install latest neovim
 wget https://github.com/neovim/neovim/releases/download/nightly/nvim.appimage
-sudo chmod u+x nvim.appimage
-sudo mv nvim.appimage /usr/local/bin/nvim
+chmod u+x nvim.appimage
+mv nvim.appimage /usr/local/bin/nvim
 
 gem install neovim
 npm install -g neovim
