@@ -102,16 +102,35 @@ fi
 
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 
-# nodejs
-curl -fsSL https://deb.nodesource.com/setup_16.x | sudo -E bash -
-sudo apt-get install -y nodejs
+# install nodejs if < 12
+install-node() {
+  curl -fsSL https://deb.nodesource.com/setup_16.x | sudo -E bash -
+  sudo apt-get install -y nodejs
+}
+
+if [[ `which node` ]]
+then
+  regex="^v([^.]*)"
+  node_version=`node -v`
+  if [[ $node_version =~ $regex ]]
+  then
+    version="${BASH_REMATCH[1]}"
+    version_int=$(($version))
+    if [[ $version_int -lt 12 ]]
+    then
+      install-node
+    fi
+  fi
+else
+  install-node
+fi
 
 # vim
 # install latest neovim (nightly failing as of 9/22/21)
 # wget https://github.com/neovim/neovim/releases/download/nightly/nvim.appimage
 wget https://github.com/neovim/neovim/releases/download/v0.5.0/nvim.appimage
-chmod u+x nvim.appimage
-mv nvim.appimage /usr/local/bin/nvim
+sudo chmod u+x nvim.appimage
+sudo mv nvim.appimage /usr/local/bin/nvim
 
 gem install neovim
 npm install -g neovim
