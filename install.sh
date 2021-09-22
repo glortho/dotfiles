@@ -107,8 +107,9 @@ curl -fsSL https://deb.nodesource.com/setup_16.x | sudo -E bash -
 sudo apt-get install -y nodejs
 
 # vim
-# install latest neovim
-wget https://github.com/neovim/neovim/releases/download/nightly/nvim.appimage
+# install latest neovim (nightly failing as of 9/22/21)
+# wget https://github.com/neovim/neovim/releases/download/nightly/nvim.appimage
+wget https://github.com/neovim/neovim/releases/download/v0.5.0/nvim.appimage
 chmod u+x nvim.appimage
 mv nvim.appimage /usr/local/bin/nvim
 
