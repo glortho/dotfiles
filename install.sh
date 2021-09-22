@@ -104,6 +104,7 @@ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:
 
 # install nodejs if < 12
 install-node() {
+  echo "Installing node..."
   curl -fsSL https://deb.nodesource.com/setup_16.x | sudo -E bash -
   sudo apt-get install -y nodejs
 }
@@ -112,6 +113,7 @@ if [[ `which node` ]]
 then
   regex="^v([^.]*)"
   node_version=`node -v`
+  echo "Found node version $node_version."
   if [[ $node_version =~ $regex ]]
   then
     version="${BASH_REMATCH[1]}"
@@ -122,6 +124,7 @@ then
     fi
   fi
 else
+  echo "Node.js not found."
   install-node
 fi
 
