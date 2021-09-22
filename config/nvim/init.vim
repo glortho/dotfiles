@@ -174,6 +174,7 @@ nnoremap ,, <C-^>
 "inoremap <C-c><C-f> <C-x><C-f>
 
 "" git shortcuts
+nnoremap <leader>cre :Git blame<CR>
 nnoremap <leader>gm :Gmerge<CR>
 nnoremap <leader>gs :Git<CR><C-w>20+
 nnoremap <leader>ps :Dispatch git push<CR>
