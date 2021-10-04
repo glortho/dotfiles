@@ -131,6 +131,9 @@ fi
 # vim
 # install latest neovim (nightly failing as of 9/22/21)
 # wget https://github.com/neovim/neovim/releases/download/nightly/nvim.appimage
+sudo modprobe fuse
+sudo groupadd fuse
+sudo usermod -a -G fuse "$(whoami)"
 wget https://github.com/neovim/neovim/releases/download/v0.5.0/nvim.appimage
 sudo chmod u+x nvim.appimage
 sudo mv nvim.appimage /usr/local/bin/nvim
