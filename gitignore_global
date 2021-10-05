@@ -1,1 +1,2 @@
 # Add files and patterns to have git ignore globally here:
+tags.*
