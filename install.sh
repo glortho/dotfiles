@@ -89,11 +89,14 @@ if [ ! -e "$HOME/.config/nvim" ] || [ "${OVERWRITE}" = "true" ]; then
     rm -rf  "$HOME/.config/nvim"
     ln -s "$(pwd)/config/nvim" "$HOME/.config/nvim"
 fi
+
+# Git config
 if [ ! -e "$HOME/.gitignore_global" ] || [ "${OVERWRITE}" = "true" ]; then
     rm -rf  "$HOME/.gitignore_global"
     ln -s "$(pwd)/gitignore_global" "$HOME/.gitignore_global"
     git config --global core.excludesfile "$HOME/.gitignore_global"
 fi
+git config pull.rebase false
 
 # powerline 10k
 P110K_DIR="${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k"
