@@ -3,6 +3,10 @@ set nocompatible
 
 call plug#begin('~/.config/nvim/plugged')
 
+Plug 'pwntester/octo.nvim'
+Plug 'kyazdani42/nvim-web-devicons'
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-telescope/telescope.nvim'
 Plug 'ludovicchabant/vim-gutentags'
 "Plug 'wincent/vim-clipper'
 Plug 'vim-airline/vim-airline'
