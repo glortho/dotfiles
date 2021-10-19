@@ -59,13 +59,11 @@ alias oo="open ."
 
 # codespaces
 function csg () {
-  gh cs ssh --profile github-codespaces -c `cs list | grep github-github | head -n 1 | awk '{print $1}'`
-}
+  gh cs ssh --profile github-codespaces -c `gh cs list | grep github-github | head -n 1 | awk '{print $1}'`
 
 function csm () {
-  gh cs ssh -c `cs list | grep github-memex | head -n 1 | awk '{print $1}'`
+  gh cs ssh -c `gh cs list | grep github-memex | head -n 1 | awk '{print $1}'`
 }
-
 
 # git aliases
 alias gpl='git pull'
