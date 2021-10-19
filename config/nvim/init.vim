@@ -463,7 +463,7 @@ nmap <leader>av :AV<CR>
 
 "Integration tests
 nmap <leader>tfi :Start npm run test:integration:storybook %<CR>
-nmap <leader>tni :Start npm run test:integration:storybook %<CR>
+nmap <leader>tni :Start npm run test:playwright:firefox %<CR>
 
 "Test
 nmap <leader>tl :call TestLast()<CR>
