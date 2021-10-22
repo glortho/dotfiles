@@ -60,6 +60,7 @@ alias oo="open ."
 # codespaces
 function csg () {
   gh cs ssh --profile github-codespaces -c `gh cs list | grep github-github | head -n 1 | awk '{print $1}'`
+}
 
 function csm () {
   gh cs ssh -c `gh cs list | grep github-memex | head -n 1 | awk '{print $1}'`
@@ -139,3 +140,4 @@ export NVM_DIR="$HOME/.nvm"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
