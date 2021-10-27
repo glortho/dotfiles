@@ -92,7 +92,7 @@ export FZF_DEFAULT_COMMAND='rg --files --hidden --follow --glob '!.git''
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 export FZF_DEFAULT_OPTS="--bind='ctrl-o:execute(vim {})+abort'"
 
-export EDITOR=vim
+export EDITOR=nvim
 
 # use vim
 set -o vi
