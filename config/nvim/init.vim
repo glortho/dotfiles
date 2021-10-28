@@ -3,6 +3,12 @@ set nocompatible
 
 call plug#begin('~/.config/nvim/plugged')
 
+Plug 'folke/which-key.nvim'
+lua << EOF
+  require("which-key").setup {
+  }
+EOF
+
 Plug 'pwntester/octo.nvim'
 Plug 'kyazdani42/nvim-web-devicons'
 Plug 'nvim-lua/plenary.nvim'
@@ -94,6 +100,7 @@ set tabstop=2
 set shiftwidth=2
 set softtabstop=2
 set expandtab
+set timeoutlen=500
 
 set scrolloff=3
 set autoindent
