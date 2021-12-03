@@ -1,5 +1,6 @@
 {
   "snippets.textmateSnippetsRoots": [
     "~/Library/ApplicationSupport/Code/User/snippets"
-  ]
+  ],
+  "solargraph.useBundler": true
 }
