@@ -2,5 +2,5 @@
   "snippets.textmateSnippetsRoots": [
     "~/Library/ApplicationSupport/Code/User/snippets"
   ],
-  "solargraph.useCommand": "bin/bundle exec solargraph"
+  "solargraph.useCommand": "bin/solargraph"
 }
