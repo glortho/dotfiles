@@ -148,6 +148,7 @@ sudo chmod u+x nvim.appimage
 sudo mv nvim.appimage /usr/local/bin/nvim
 
 gem install neovim
+gem install solargraph
 npm install -g neovim
 pip3 install --user neovim
 
