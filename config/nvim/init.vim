@@ -420,8 +420,7 @@ let g:coc_global_extensions = [
   "\ 'coc-snippets',
   \ 'coc-pairs',
   \ 'coc-tsserver',
-  \ 'coc-eslint',
-  \ 'coc-solargraph'
+  \ 'coc-eslint'
   \ ]
 
 " use <tab> for trigger completion and navigate to the next complete item
