@@ -3,6 +3,7 @@ set nocompatible
 
 call plug#begin('~/.config/nvim/plugged')
 
+Plug 'mhinz/vim-startify'
 Plug 'github/copilot.vim'
 Plug 'folke/which-key.nvim'
 Plug 'pwntester/octo.nvim'
