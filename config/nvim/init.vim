@@ -417,11 +417,10 @@ nmap <leader>nf :NERDTreeFind<Cr>
 
 let g:coc_global_extensions = [
   \ 'coc-json',
-  \ 'coc-git',
   "\ 'coc-snippets',
   \ 'coc-pairs',
-  \ 'coc-tsserver',
-  \ 'coc-eslint'
+  "\ 'coc-tsserver',
+  "\ 'coc-eslint'
   \ ]
 
 " use <tab> for trigger completion and navigate to the next complete item
