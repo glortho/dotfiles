@@ -176,7 +176,7 @@ nnoremap <leader>ba va{
 nnoremap <leader>pa va(
 
 "" easy toggle to last buffer
-nnoremap ,, <C-^>
+nnoremap <leader>,, <C-^>
 
 "" easier autocompletion
 "inoremap <C-c><C-f> <C-x><C-f>
