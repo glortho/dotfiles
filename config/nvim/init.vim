@@ -3,6 +3,7 @@ set nocompatible
 
 call plug#begin('~/.config/nvim/plugged')
 
+Plug 'junegunn/goyo.vim'
 Plug 'lukas-reineke/indent-blankline.nvim'
 Plug 'mhinz/vim-startify'
 Plug 'github/copilot.vim'
@@ -236,8 +237,8 @@ vnoremap <leader>lj :m '>+1<CR>gv=gv
 vnoremap <leader>lk :m '<-2<CR>gv=gv''
 
 "" Move visual block
-vnoremap J :m '>+1<CR>gv=gv
-vnoremap K :m '<-2<CR>gv=gv
+"vnoremap J :m '>+1<CR>gv=gv
+"vnoremap K :m '<-2<CR>gv=gv
 
 "" easier beginning and end of line
 noremap H ^
