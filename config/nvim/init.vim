@@ -8,6 +8,9 @@ Plug 'lukas-reineke/indent-blankline.nvim'
 Plug 'mhinz/vim-startify'
 Plug 'github/copilot.vim'
 Plug 'folke/which-key.nvim'
+lua << EOF
+  require("which-key").setup {}
+EOF
 Plug 'pwntester/octo.nvim'
 Plug 'kyazdani42/nvim-web-devicons'
 Plug 'nvim-lua/plenary.nvim'
