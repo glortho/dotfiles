@@ -16,7 +16,7 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(golang git brew fabric osx npm docker jsontools sudo kubectl zsh-syntax-highlighting)
+plugins=(golang git brew fabric macos npm docker jsontools sudo kubectl zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
 
