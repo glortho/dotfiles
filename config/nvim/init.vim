@@ -8,9 +8,6 @@ Plug 'lukas-reineke/indent-blankline.nvim'
 Plug 'mhinz/vim-startify'
 Plug 'github/copilot.vim'
 Plug 'folke/which-key.nvim'
-lua << EOF
-  require("which-key").setup {}
-EOF
 Plug 'pwntester/octo.nvim'
 Plug 'kyazdani42/nvim-web-devicons'
 Plug 'nvim-lua/plenary.nvim'
@@ -74,6 +71,10 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'radenling/vim-dispatch-neovim'
 
 call plug#end()
+
+lua << EOF
+  require("which-key").setup {}
+EOF
 
 "call clipper#set_invocation('socat - UNIX-CLIENT:/root/.clipper.sock')
 function GBrowseFileRemote()
