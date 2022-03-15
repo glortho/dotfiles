@@ -144,6 +144,7 @@ nnoremap <leader>bp :bp<cr>
 "set wrap
 set textwidth=79
 set formatoptions=qrn1
+autocmd FileType markdown setlocal formatoptions=cq
 
 set list
 set listchars=tab:▸\
