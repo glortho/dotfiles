@@ -5,7 +5,6 @@ call plug#begin('~/.config/nvim/plugged')
 
 Plug 'junegunn/goyo.vim'
 Plug 'lukas-reineke/indent-blankline.nvim'
-Plug 'mhinz/vim-startify'
 Plug 'github/copilot.vim'
 Plug 'folke/which-key.nvim'
 Plug 'pwntester/octo.nvim'
