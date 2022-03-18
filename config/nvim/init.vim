@@ -71,9 +71,6 @@ Plug 'radenling/vim-dispatch-neovim'
 
 call plug#end()
 
-lua << EOF
-  require("which-key").setup {}
-EOF
 
 "call clipper#set_invocation('socat - UNIX-CLIENT:/root/.clipper.sock')
 function GBrowseFileRemote()
@@ -485,3 +482,7 @@ tnoremap <C-w>l <C-\><C-n><C-w>l
 
 "Focus mode
 nnoremap <leader>fo :Goyo 40%<CR>
+
+lua << EOF
+  require("which-key").setup {}
+EOF
