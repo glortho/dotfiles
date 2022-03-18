@@ -48,6 +48,7 @@ else
         npm \
         ripgrep \
         socat \
+        tmux \
         universal-ctags \
         unzip \
         zip \
@@ -88,6 +89,12 @@ fi
 if [ ! -e "$HOME/.config/nvim" ] || [ "${OVERWRITE}" = "true" ]; then
     rm -rf  "$HOME/.config/nvim"
     ln -s "$(pwd)/config/nvim" "$HOME/.config/nvim"
+fi
+if [ ! -e "$HOME/.tmux.conf" ] || [ "${OVERWRITE}" = "true" ]; then
+    rm -f  "$HOME/.tmux.conf"
+    rm -rf "$HOME/.tmux"
+    ln -s "$(pwd)/tmux.conf" "$HOME/.tmux.conf"
+    mkdir "$HOME/.tmux"
 fi
 
 # Git config
@@ -136,9 +143,10 @@ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:
   #install-node
 #fi
 
+tmux new -d # open a detached session to install TPM
+tmux new -d '~/.tmux/plugins/tpm/scripts/install_plugins.sh' # open another detached session and install plugins
+
 # vim
-# install latest neovim (nightly failing as of 9/22/21)
-# wget https://github.com/neovim/neovim/releases/download/nightly/nvim.appimage
 sudo modprobe fuse
 sudo groupadd fuse
 sudo usermod -a -G fuse "$(whoami)"
@@ -147,9 +155,10 @@ unzip appimage.zip
 sudo chmod u+x nvim.appimage
 sudo mv nvim.appimage /usr/local/bin/nvim
 
-gem install neovim
+sudo gem install neovim rubocop
 npm install -g neovim
 pip3 install --user neovim
+go get -u github.com/arl/gitmux
 
 nvim +'PlugInstall --sync' +qa
 
