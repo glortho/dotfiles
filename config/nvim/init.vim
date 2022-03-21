@@ -483,6 +483,6 @@ tnoremap <C-w>l <C-\><C-n><C-w>l
 "Focus mode
 nnoremap <leader>fo :Goyo 40%<CR>
 
-lua << EOF
-  require("which-key").setup {}
-EOF
+"lua << EOF
+  "require("which-key").setup {}
+"EOF
