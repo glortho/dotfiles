@@ -6,11 +6,11 @@ call plug#begin('~/.config/nvim/plugged')
 Plug 'junegunn/goyo.vim'
 Plug 'lukas-reineke/indent-blankline.nvim'
 Plug 'github/copilot.vim'
-Plug 'folke/which-key.nvim'
-Plug 'pwntester/octo.nvim'
+"Plug 'folke/which-key.nvim'
+"Plug 'pwntester/octo.nvim'
 Plug 'kyazdani42/nvim-web-devicons'
-Plug 'nvim-lua/plenary.nvim'
-Plug 'nvim-telescope/telescope.nvim'
+"Plug 'nvim-lua/plenary.nvim'
+"Plug 'nvim-telescope/telescope.nvim'
 Plug 'ludovicchabant/vim-gutentags'
 "Plug 'wincent/vim-clipper'
 Plug 'vim-airline/vim-airline'
@@ -56,7 +56,7 @@ Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 "Plug 'facebook/vim-flow'
 "Plug 'tpope/vim-speeddating'
-Plug 'leafgarland/typescript-vim'
+"Plug 'leafgarland/typescript-vim'
 "Plug 'ekalinin/Dockerfile.vim'
 "Plug 'fatih/vim-go'
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() } }
@@ -64,7 +64,7 @@ Plug 'preservim/nerdtree' |
       \ Plug 'Xuyuanp/nerdtree-git-plugin' |
       \ Plug 'ryanoasis/vim-devicons'
 Plug 'bryanmylee/vim-colorscheme-icons'
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
+"Plug 'neoclide/coc.nvim', {'branch': 'release'}
 "Plug 'vim-test/vim-test'
 "Plug 'rhysd/git-messenger.vim'
 Plug 'radenling/vim-dispatch-neovim'
