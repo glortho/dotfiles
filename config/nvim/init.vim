@@ -3,6 +3,9 @@ set nocompatible
 
 call plug#begin('~/.config/nvim/plugged')
 
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+
+Plug 'honza/vim-snippets'
 Plug 'junegunn/goyo.vim'
 Plug 'lukas-reineke/indent-blankline.nvim'
 Plug 'github/copilot.vim'
@@ -30,7 +33,7 @@ Plug 'scrooloose/nerdcommenter'
 "Plug 'vim-scripts/YankRing.vim'
 Plug 'machakann/vim-highlightedyank'
 "Plug 'ap/vim-css-color'
-"Plug 'tpope/vim-eunuch'
+Plug 'tpope/vim-eunuch'
 "Plug 'kshenoy/vim-signature'
 "Plug 'rizzatti/funcoo.vim'
 "Plug 'rizzatti/dash.vim'
@@ -64,13 +67,28 @@ Plug 'preservim/nerdtree' |
       \ Plug 'Xuyuanp/nerdtree-git-plugin' |
       \ Plug 'ryanoasis/vim-devicons'
 Plug 'bryanmylee/vim-colorscheme-icons'
-"Plug 'neoclide/coc.nvim', {'branch': 'release'}
 "Plug 'vim-test/vim-test'
 "Plug 'rhysd/git-messenger.vim'
 Plug 'radenling/vim-dispatch-neovim'
 
 call plug#end()
 
+let g:coc_global_extensions = ['coc-json', 'coc-tsserver', 'coc-snippets', 'coc-pairs']
+
+
+set runtimepath^=$HOME/.config/nvim/plugged/vim-snippets
+
+" Use <C-j> for jump to next placeholder, it's default of coc.nvim
+let g:coc_snippet_next = '<c-j>'
+
+" Use <C-k> for jump to previous placeholder, it's default of coc.nvim
+let g:coc_snippet_prev = '<c-k>'
+
+" Use <C-j> for both expand and jump (make expand higher priority.)
+imap <C-j> <Plug>(coc-snippets-expand-jump)
+
+" Use <leader>x for convert visual selected code to snippet
+xmap <leader>x  <Plug>(coc-convert-snippet)
 
 "call clipper#set_invocation('socat - UNIX-CLIENT:/root/.clipper.sock')
 function GBrowseFileRemote()
@@ -418,32 +436,31 @@ let g:airline_section_error = airline#section#create_left(['ALE'])
 " NERDTree Mappings
 nmap <leader>nf :NERDTreeFind<Cr>
 
-let g:coc_global_extensions = [
-  \ 'coc-json',
-  "\ 'coc-snippets',
-  \ 'coc-pairs',
-  "\ 'coc-tsserver',
-  "\ 'coc-eslint'
-  \ ]
-
 " use <tab> for trigger completion and navigate to the next complete item
 function! s:check_back_space() abort
   let col = col('.') - 1
   return !col || getline('.')[col - 1]  =~ '\s'
 endfunction
 
-inoremap <silent><expr> <Tab>
+" Use tab for trigger completion with characters ahead and navigate.
+" NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by
+" other plugin before putting this into your config.
+inoremap <silent><expr> <TAB>
       \ pumvisible() ? "\<C-n>" :
-      \ <SID>check_back_space() ? "\<Tab>" :
+      \ <SID>check_back_space() ? "\<TAB>" :
       \ coc#refresh()
+inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
 
-"Use <Tab> and <S-Tab> to navigate the completion list:
-inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
-inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+" Use <c-space> to trigger completion.
+if has('nvim')
+  inoremap <silent><expr> <c-space> coc#refresh()
+else
+  inoremap <silent><expr> <c-@> coc#refresh()
+endif
 
-"Use CR to select autocomplete selection
-inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm() : "\<C-g>u\<CR>"
-
+""Use CR to select autocomplete selection
+inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm()
+                              \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
 
 "" Send results out to quickfix
 "let test#strategy = "dispatch"
@@ -482,7 +499,3 @@ tnoremap <C-w>l <C-\><C-n><C-w>l
 
 "Focus mode
 nnoremap <leader>fo :Goyo 40%<CR>
-
-"lua << EOF
-  "require("which-key").setup {}
-"EOF
