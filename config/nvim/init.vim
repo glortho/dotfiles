@@ -73,7 +73,8 @@ Plug 'radenling/vim-dispatch-neovim'
 
 call plug#end()
 
-let g:coc_global_extensions = ['coc-json', 'coc-tsserver', 'coc-snippets', 'coc-pairs']
+"let g:coc_global_extensions = ['coc-json', 'coc-tsserver', 'coc-snippets', 'coc-pairs']
+let g:coc_global_extensions = ['coc-snippets', 'coc-pairs']
 
 
 set runtimepath^=$HOME/.config/nvim/plugged/vim-snippets
@@ -149,7 +150,7 @@ set gdefault
 set incsearch
 set showmatch
 set hlsearch
-nnoremap <leader>, :noh<cr>
+nnoremap <leader>,c :noh<cr>
 nnoremap <leader>r :%s/
 
 nnoremap <leader>bn :bn<cr>
